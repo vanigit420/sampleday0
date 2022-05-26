@@ -6,26 +6,41 @@ namespace Logical_Programs
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number to check wheather its Prime or not ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int count = 0;
-            for (int i = 1; i <= num; i++)
+            int n, i, sum;
+
+            Console.Write("Check whether a given number is perfect number or not:\n");
+
+            Console.Write("Input the  number : ");
+            n = Convert.ToInt32(Console.ReadLine());
+            sum = 0;
+            Console.Write("The positive divisor  : ");
+
+            for (i = 1; i < n; i++)
             {
-                //checking the factors of a number by iterating from 1 to num.
-                if (num % i == 0)
-                    count++;
+                if (n % i == 0)
+                {
+                    sum = sum + i;
+                    Console.Write("{0}  ", i);
+                }
             }
-            if (count == 2)
-            {
-                Console.WriteLine(num + " is a Prime number");
-            }
+            Console.Write("\nThe sum of the divisor is : {0}", sum);
+            if (sum == n)
+                Console.Write("\nSo, the number is perfect.");
             else
-            {
-                Console.WriteLine(num + " is not a Prime number");
-            }
 
+                Console.Write("\nSo, the number is not prime.");
+
+            
         }
-
     }
-
 }
+                 
+
+                                
+
+
+
+
+
+
+
